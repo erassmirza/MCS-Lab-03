@@ -2,7 +2,7 @@ clear, clc, close
 num = 1/50;
 den = [1 10/50 5/50];
 plant = tf(num,den)
-step(plant);
+step(plant); grid on;
 
 Kp=500; Ki=10; Kd=100;
 contr=tf([Kd Kp Ki],[1 0]);
@@ -11,7 +11,7 @@ t=0:0.0001:300;
 
 figure
 [n,d] = tfdata(sys_cl)
-step(n,d,t);
+step(n,d,t); grid on;
 [y,x,t]=step(n,d,t);
 
 %to find rise time i.e. time taken for output to rise from
